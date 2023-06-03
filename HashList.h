@@ -1,0 +1,6 @@
+#ifndef GROUP_PROJECT__HASHLIST_H_
+#define GROUP_PROJECT__HASHLIST_H_
+
+class HashList {};
+
+#endif  //GROUP_PROJECT__HASHLIST_H_

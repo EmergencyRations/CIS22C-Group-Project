@@ -1,0 +1,6 @@
+#ifndef GROUP_PROJECT__FILEHANDLER_H_
+#define GROUP_PROJECT__FILEHANDLER_H_
+
+class FileHandler {};
+
+#endif  //GROUP_PROJECT__FILEHANDLER_H_

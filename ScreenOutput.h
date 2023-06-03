@@ -1,0 +1,6 @@
+#ifndef GROUP_PROJECT__SCREENOUTPUT_H_
+#define GROUP_PROJECT__SCREENOUTPUT_H_
+
+class ScreenOutput {};
+
+#endif  //GROUP_PROJECT__SCREENOUTPUT_H_
