@@ -32,7 +32,7 @@ class HashTable {
 
   // Insert a key into the hash table
   void insert(const T &item) {
-    std::string key = item.getMake();  // Assuming the "make" attribute is our key
+    std::string key = item.getModel();
     int index = hash(key);
 
     while(hashAry[index].getOccupied()) {
@@ -56,7 +56,7 @@ class HashTable {
     int index = hash(key);
 
     while (hashAry[index].getOccupied()) {
-      if (hashAry[index].getItem().getMake() == key) {
+      if (hashAry[index].getItem().getModel() == key) {
         hashAry[index].setOccupied(-1);  // Deleted
         count--;
         return;
@@ -70,7 +70,7 @@ class HashTable {
     int index = hash(key);
 
     while (hashAry[index].getOccupied()) {
-      if (hashAry[index].getItem().getMake() == key) {
+      if (hashAry[index].getItem().getModel() == key) {
         return true;
       }
       index = (index + 1) % size;  // Linear probing
