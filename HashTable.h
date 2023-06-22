@@ -10,7 +10,7 @@ template <typename T>
 class HashTable {
   int size;
   int count;
-  int collisions;
+  int noCollisions;
   int longestCollisionPath;
   HashNode<T>* hashAry;
 
@@ -18,11 +18,11 @@ class HashTable {
   [[nodiscard]] int hash(const std::string &key) const { return key.length() % size; }
 
  public:
-  HashTable() : size(25), count(0), collisions(0), longestCollisionPath(0) {
+  HashTable() : size(25), count(0), noCollisions(0), longestCollisionPath(0) {
     hashAry = new HashNode<T>[size];
   };
 
-  explicit HashTable(int tableSize) : size(tableSize), count(0), collisions(0), longestCollisionPath(0) {
+  explicit HashTable(int tableSize) : size(tableSize), count(0), noCollisions(0), longestCollisionPath(0) {
     hashAry = new HashNode<T>[size];
   }
 
@@ -36,19 +36,19 @@ class HashTable {
     int index = hash(key);
 
     while(hashAry[index].getOccupied()) {
-      collisions++;
+      noCollisions++;
       index = (index + 1) % size;  // Linear probing
     }
 
-    if (collisions > longestCollisionPath) {
-      longestCollisionPath = collisions;
+    if (noCollisions > longestCollisionPath) {
+      longestCollisionPath = noCollisions;
     }
 
     hashAry[index].setItem(item);
     hashAry[index].setOccupied(1);
     count++;
 
-    collisions = 0;  // Reset collisions count for next insert operation
+    noCollisions = 0;  // Reset count for next operation
   }
 
   // Delete a key from the hash table
